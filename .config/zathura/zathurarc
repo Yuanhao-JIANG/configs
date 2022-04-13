@@ -2,3 +2,4 @@ set recolor
 set recolor-lightcolor \#232627
 set recolor-keephue
 set default-bg \#2A2E32
+set selection-clipboard clipboard
