@@ -27,7 +27,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
 
 autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+" autocmd BufWinEnter *.* silent loadview
 
 set cursorline
 set cursorcolumn
