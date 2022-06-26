@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -11,12 +11,9 @@ call plug#end()
 
 set complete+=kspell
 
-let g:tex_flavor='latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_mode=0
-" show conceal
-set conceallevel=2
-let g:tex_conceal='abdmg'
+autocmd FileType tex setlocal conceallevel=2
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -33,7 +30,7 @@ set cursorline
 set cursorcolumn
 set expandtab
 set ts=4 sts=4 sw=4
-set colorcolumn=120
+set colorcolumn=80,120
 set rnu
 set ruler
 syntax on
