@@ -23,6 +23,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
 
+set vop-=options vop-=localoptions
 autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview
 
