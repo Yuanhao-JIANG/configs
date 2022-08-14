@@ -27,6 +27,32 @@ set vop-=options vop-=localoptions
 autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview
 
+" set status line
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set laststatus=2
+set statusline=
+set statusline+=%#DiffChange#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#ColorColumn#
+set statusline+=\ %F
+set statusline+=%m\ 
+set statusline+=%=
+set statusline+=%#SpellLocal#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+
 set cursorline
 set cursorcolumn
 set expandtab
