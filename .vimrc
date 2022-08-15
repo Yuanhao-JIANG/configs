@@ -2,10 +2,11 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -15,6 +16,8 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_mode=0
 autocmd FileType tex setlocal conceallevel=2
 
+let g:ycm_key_list_select_completion = ['<C-j>']
+let g:ycm_key_list_previous_completion = ['<C-k>']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -28,30 +31,19 @@ autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview
 
 " set status line
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
 set laststatus=2
 set statusline=
-set statusline+=%#DiffChange#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#ColorColumn#
+set statusline+=%#StatusLineFile#
 set statusline+=\ %F
-set statusline+=%m\ 
+set statusline+=%m
 set statusline+=%=
-set statusline+=%#SpellLocal#
+set statusline+=%#StatusLineTail#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-" set statusline+=\[%{&fileformat}\]
+set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
-set statusline+=\ 
+set statusline+=\
 
 set cursorline
 set cursorcolumn
@@ -62,10 +54,11 @@ set rnu
 set ruler
 syntax on
 
-
-hi cursorline cterm=NONE ctermbg=237
-hi cursorcolumn ctermbg=237
-hi cursorlinenr cterm=NONE ctermbg=237
+hi CursorLine cterm=NONE ctermbg=237
+hi CursorColumn ctermbg=237
+hi CursorLineNr cterm=NONE ctermbg=237
 hi Conceal cterm=NONE ctermfg=lightyellow ctermbg=NONE
-" to clear conceal highlighting use the command :hi clear Conceal
 hi ColorColumn ctermbg=240
+hi StatusLineFile ctermbg=24
+hi StatusLineTail ctermbg=30
+
