@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
-Plug 'vim-scripts/AutoComplPop'
+" Plug 'vim-scripts/AutoComplPop'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
