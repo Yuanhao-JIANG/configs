@@ -1,0 +1,182 @@
+format = """
+($cmd_duration\n)\
+$line_break\
+$username\
+$hostname\
+$localip\
+$battery\
+$time\
+$shlvl\
+$singularity\
+$kubernetes\
+$line_break\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$line_break\
+$jobs\
+$status\
+$container\
+$shell\
+$character"""
+
+add_newline = false
+
+[username]
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+format = "[@$ssh_symbol$hostname]($style) "
+ssh_only = false
+disabled = false
+
+[localip]
+ssh_only = false
+#format = "[@$localipv4](bold red) "
+disabled = false
+
+[battery]
+format = "[$percentage]($style) "
+[[battery.display]]
+threshold = 100
+
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = "%T"
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+truncate_to_repo = false
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
+
+[shell]
+style = "green bold"
+format = "[$indicator]($style) "
+disabled = false
+
+[character]
+success_symbol = "[](bold green)"
