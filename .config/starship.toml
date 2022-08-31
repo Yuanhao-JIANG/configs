@@ -1,7 +1,7 @@
 format = """
 ($cmd_duration\n)\
 $line_break\
-$username\
+[ / ](bold red)$username\
 $hostname\
 $localip\
 $battery\
@@ -10,7 +10,7 @@ $shlvl\
 $singularity\
 $kubernetes\
 $line_break\
-$directory\
+[\\( ](bold red)$directory\
 $vcsh\
 $git_branch\
 $git_commit\
@@ -70,7 +70,7 @@ $crystal\
 $custom\
 $sudo\
 $line_break\
-$jobs\
+[ \\\\ ](bold red)$jobs\
 $status\
 $container\
 $shell\
@@ -84,13 +84,13 @@ disabled = false
 show_always = true
 
 [hostname]
-format = "[@$ssh_symbol$hostname]($style) "
+format = "[@ $ssh_symbol$hostname]($style) "
 ssh_only = false
 disabled = false
 
 [localip]
 ssh_only = false
-#format = "[@$localipv4](bold red) "
+format = "[\\($localipv4\\)](bold dimmed green) "
 disabled = false
 
 [battery]
@@ -100,8 +100,8 @@ threshold = 100
 
 [time]
 disabled = false
-format = '[$time]($style) '
-time_format = "%T"
+format = '[@ $time]($style) '
+time_format = "%T %D"
 
 [aws]
 symbol = "  "
