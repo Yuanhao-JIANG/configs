@@ -1,7 +1,7 @@
 format = """
 ($cmd_duration\n)\
 $line_break\
-[ / ](bold red)$username\
+[| ](bold yellow)$username\
 $hostname\
 $localip\
 $battery\
@@ -10,7 +10,7 @@ $shlvl\
 $singularity\
 $kubernetes\
 $line_break\
-[\\( ](bold red)$directory\
+[| ](bold yellow)$directory\
 $vcsh\
 $git_branch\
 $git_commit\
@@ -70,7 +70,7 @@ $crystal\
 $custom\
 $sudo\
 $line_break\
-[ \\\\ ](bold red)$jobs\
+[| ](bold yellow)$jobs\
 $status\
 $container\
 $shell\
@@ -78,30 +78,48 @@ $character"""
 
 add_newline = false
 
+[cmd_duration]
+style = "bold black"
+format = "[\\(took $duration\\)]($style) "
+
 [username]
 format = "[$user]($style) "
 disabled = false
 show_always = true
 
 [hostname]
+ssh_symbol = "\\(ssh\\) "
+style = "bold blue"
 format = "[@ $ssh_symbol$hostname]($style) "
 ssh_only = false
 disabled = false
 
 [localip]
 ssh_only = false
-format = "[\\($localipv4\\)](bold dimmed green) "
+style = "bold blue"
+format = "[\\($localipv4\\)]($style) "
 disabled = false
 
 [battery]
 format = "[$percentage]($style) "
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 80
+style = "bold yellow"
+
 [[battery.display]]
 threshold = 100
+style = "bold dimmed green"
 
 [time]
 disabled = false
+style = "bold black"
 format = '[@ $time]($style) '
-time_format = "%T %D"
+time_format = "%T %a %D"
 
 [aws]
 symbol = "  "
@@ -179,4 +197,9 @@ format = "[$indicator]($style) "
 disabled = false
 
 [character]
-success_symbol = "[](bold green)"
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
+vimcmd_symbol = "[<](bold green)"
+vimcmd_replace_one_symbol = "[<](bold purple)"
+vimcmd_replace_symbol = "[<](bold purple)"
+vimcmd_visual_symbol = "[<](bold yellow)"
