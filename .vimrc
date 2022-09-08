@@ -5,6 +5,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -28,10 +29,12 @@ set vop-=options vop-=localoptions
 autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview
 
+autocmd vimenter * ++nested colorscheme gruvbox
+
 " set status line
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='luna'
+"let g:airline_theme='luna'
 let g:airline#extensions#default#section_truncate_width = {
             \ 'b': 79,
             \ 'x': 60,
@@ -53,13 +56,13 @@ let g:airline#extensions#default#section_truncate_width = {
 "set statusline+=\ %l:%c
 "set statusline+=\ 
 
-hi CursorLine cterm=NONE ctermbg=237
-hi CursorColumn ctermbg=237
-hi CursorLineNr cterm=NONE ctermbg=237
-hi Conceal cterm=NONE ctermfg=lightyellow ctermbg=NONE
-hi ColorColumn ctermbg=240
-hi StatusLineFile ctermbg=24
-hi StatusLineTail ctermbg=30
+"hi CursorLine cterm=NONE ctermbg=237
+"hi CursorColumn ctermbg=237
+"hi CursorLineNr cterm=NONE ctermbg=237
+"hi Conceal cterm=NONE ctermfg=lightyellow ctermbg=NONE
+"hi ColorColumn ctermbg=240
+"hi StatusLineFile ctermbg=24
+"hi StatusLineTail ctermbg=30
 set cursorline
 set cursorcolumn
 set colorcolumn=80,120
