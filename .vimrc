@@ -5,9 +5,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'ycm-core/YouCompleteMe'
-Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -63,8 +63,11 @@ let g:airline#extensions#default#section_truncate_width = {
 "hi ColorColumn ctermbg=240
 "hi StatusLineFile ctermbg=24
 "hi StatusLineTail ctermbg=30
+
+set wrap linebreak nolist
+set textwidth=80
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set colorcolumn=80,120
 
 set complete+=kspell
