@@ -5,9 +5,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
@@ -23,7 +23,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="horizontal"
+let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
 
 set vop-=options vop-=localoptions
@@ -44,18 +44,6 @@ let g:airline#extensions#default#section_truncate_width = {
             \ 'warning': 12,
             \ 'error': 80,
             \ }
-"set statusline=
-"set statusline+=%#StatusLineFile#
-"set statusline+=\ %F
-"set statusline+=%m
-"set statusline+=%=
-"set statusline+=%#StatusLineTail#
-"set statusline+=\ %y
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"set statusline+=\[%{&fileformat}\]
-"set statusline+=\ %p%%
-"set statusline+=\ %l:%c
-"set statusline+=\ 
 
 "hi CursorLine cterm=NONE ctermbg=237
 "hi CursorColumn ctermbg=237
@@ -64,16 +52,6 @@ let g:airline#extensions#default#section_truncate_width = {
 "hi ColorColumn ctermbg=240
 "hi StatusLineFile ctermbg=24
 "hi StatusLineTail ctermbg=30
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
 
 set wrap linebreak nolist
 set textwidth=80
