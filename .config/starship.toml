@@ -1,7 +1,7 @@
 format = """
 ($cmd_duration\n)\
 $line_break\
-[| ](bold yellow)$username\
+[-> ](bold green)$username\
 $hostname\
 $localip\
 $battery\
@@ -10,7 +10,7 @@ $shlvl\
 $singularity\
 $kubernetes\
 $line_break\
-[| ](bold yellow)$directory\
+[-> ](bold green)$directory\
 $vcsh\
 $git_branch\
 $git_commit\
@@ -70,7 +70,7 @@ $crystal\
 $custom\
 $sudo\
 $line_break\
-[| ](bold yellow)$jobs\
+[-> ](bold green)$jobs\
 $status\
 $container\
 $shell\
@@ -101,19 +101,20 @@ format = "[\\($localipv4\\)]($style) "
 disabled = false
 
 [battery]
-format = "[$percentage]($style) "
+#format = "[$percentage]($style) "
+disabled = true
 
-[[battery.display]]
-threshold = 20
-style = "bold red"
-
-[[battery.display]]
-threshold = 80
-style = "bold yellow"
-
-[[battery.display]]
-threshold = 100
-style = "bold dimmed green"
+#[[battery.display]]
+#threshold = 20
+#style = "bold red"
+#
+#[[battery.display]]
+#threshold = 80
+#style = "bold yellow"
+#
+#[[battery.display]]
+#threshold = 100
+#style = "bold dimmed green"
 
 [time]
 disabled = false
@@ -185,11 +186,17 @@ symbol = " "
 [python]
 symbol = " "
 
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = ' '
+
 [spack]
 symbol = "🅢 "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [shell]
 style = "green bold"
