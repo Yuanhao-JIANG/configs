@@ -88,7 +88,7 @@ disabled = false
 show_always = true
 
 [hostname]
-ssh_symbol = "\\(ssh\\) "
+ssh_symbol = " "
 style = "bold blue"
 format = "[@ $ssh_symbol$hostname]($style) "
 ssh_only = false
@@ -138,7 +138,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " "
 truncate_to_repo = false
 
 [docker_context]
@@ -169,10 +169,10 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
@@ -181,7 +181,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [python]
 symbol = " "
