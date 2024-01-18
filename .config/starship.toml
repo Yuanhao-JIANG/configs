@@ -1,7 +1,7 @@
 format = """
 ($cmd_duration\n)\
 $line_break\
-[-> ](bold green)$username\
+[╭───> ](bold bright-yellow)$username\
 $hostname\
 $localip\
 $battery\
@@ -10,7 +10,7 @@ $shlvl\
 $singularity\
 $kubernetes\
 $line_break\
-[-> ](bold green)$directory\
+[│ ](bold bright-yellow)$directory\
 $vcsh\
 $git_branch\
 $git_commit\
@@ -70,7 +70,7 @@ $crystal\
 $custom\
 $sudo\
 $line_break\
-[-> ](bold green)$jobs\
+[╰─> ](bold bright-yellow)$jobs\
 $status\
 $container\
 $shell\
@@ -88,7 +88,7 @@ disabled = false
 show_always = true
 
 [hostname]
-ssh_symbol = " "
+ssh_symbol = "\\(ssh\\) "
 style = "bold blue"
 format = "[@ $ssh_symbol$hostname]($style) "
 ssh_only = false
@@ -101,20 +101,19 @@ format = "[\\($localipv4\\)]($style) "
 disabled = false
 
 [battery]
-#format = "[$percentage]($style) "
-disabled = true
+format = "[$percentage]($style) "
 
-#[[battery.display]]
-#threshold = 20
-#style = "bold red"
-#
-#[[battery.display]]
-#threshold = 80
-#style = "bold yellow"
-#
-#[[battery.display]]
-#threshold = 100
-#style = "bold dimmed green"
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 80
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold dimmed green"
 
 [time]
 disabled = false
@@ -138,7 +137,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " "
 truncate_to_repo = false
 
 [docker_context]
@@ -169,10 +168,10 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = "󰍛 "
+symbol = " "
 
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
@@ -181,7 +180,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = "󰏗 "
+symbol = " "
 
 [python]
 symbol = " "
@@ -190,13 +189,13 @@ symbol = " "
 symbol = "󰟔 "
 
 [ruby]
-symbol = ' '
+symbol= " "
 
 [spack]
 symbol = "🅢 "
 
 [rust]
-symbol = "󱘗 "
+symbol = " "
 
 [shell]
 style = "green bold"
