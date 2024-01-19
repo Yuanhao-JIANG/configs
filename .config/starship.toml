@@ -4,8 +4,8 @@ $line_break\
 [╭───> ](bold bright-yellow)$username\
 $hostname\
 $localip\
-$battery\
 $time\
+$battery\
 $shlvl\
 $singularity\
 $kubernetes\
@@ -101,7 +101,10 @@ format = "[\\($localipv4\\)]($style) "
 disabled = false
 
 [battery]
-format = "[$percentage]($style) "
+format = "[\\[$percentage$symbol\\]]($style) "
+full_symbol = ""
+charging_symbol = " 󱐋"
+discharging_symbol = ""
 
 [[battery.display]]
 threshold = 20
@@ -137,7 +140,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " "
 truncate_to_repo = false
 
 [docker_context]
@@ -168,19 +171,19 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = "󰎙 "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [python]
 symbol = " "
@@ -195,7 +198,7 @@ symbol= " "
 symbol = "🅢 "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [shell]
 style = "green bold"
