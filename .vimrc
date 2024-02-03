@@ -9,8 +9,11 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'jalvesaq/Nvim-R'
 
 call plug#end()
+
+set autoread
 
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
@@ -23,7 +26,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit="horizontal"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
 
 set vop-=options vop-=localoptions
@@ -58,7 +61,6 @@ set textwidth=80
 set cursorline
 "set cursorcolumn
 set colorcolumn=80,120
-
 set complete+=kspell
 set expandtab
 set ts=4 sts=4 sw=4
